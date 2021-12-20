@@ -16,5 +16,13 @@ namespace ProductReviewManagement
                     + "Review" + product.review + "isLike" + product.isLike);
             }
         }
+        public static void SelectTopRatingsRecords(List<ProductReview> list)
+        {
+            var records = (from product in list orderby product.rating descending select product).Take(3);
+            foreach (ProductReview product in records)
+            {
+                Console.WriteLine("ProductId : " + product.productId + " UserId : " + product.userId + " Rating : " + product.rating + " Review : " + product.review + " IsLike : " + product.isLike);
+            }
+        }
     }
 }

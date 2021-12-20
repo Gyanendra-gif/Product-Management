@@ -23,7 +23,24 @@ namespace ProductReviewManagement
                 new ProductReview(){productId=9, userId=9, rating=5, review="Good", isLike=true},
                 new ProductReview(){productId=10, userId=10, rating=5, review="Good", isLike=true}
             };
-            ManagementOperation.Display(list);
-        }             
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("Enter your Choice Number to Execute the Program Press- 1-Display Data, 2-Retrive Data, 3-Update Employee, 4-View, 5-Exit");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        ManagementOperation.Display(list);
+                        break;
+                    case 2:
+                        ManagementOperation.SelectTopRatingsRecords(list);
+                        break;
+                    case 3: 
+                        flag = false;
+                        break;
+                }
+            }
+        }
     }
 }
