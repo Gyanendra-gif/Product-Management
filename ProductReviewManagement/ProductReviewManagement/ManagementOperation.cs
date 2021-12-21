@@ -94,5 +94,20 @@ namespace ProductReviewManagement
                 Console.WriteLine(list.productId + "------" + list.AverageRating);
             }
         }
+        public void RetreiveProductIdAndReview(List<ProductReview> review, string reviewMassage)
+        {
+            var recordData = from productReviews in review where productReviews.review.Contains(reviewMassage) select productReviews;
+        }
+        public void RetriveRecordsFromDataTableWhereUserId()
+        {
+            var productTable = from products in this.dataTable.AsEnumerable()
+                               where products.Field<int>("UserId") == 10
+                               select products;
+            foreach (DataRow product in productTable)
+            {
+                Console.WriteLine(product.Field<int>("ProductId") + " " + product.Field<int>("UserID") + " " +
+                  product.Field<int>("Rating") + " " + product.Field<string>("Review") + " " + product.Field<bool>("IsLike"));
+            }
+        }
     }
 }
