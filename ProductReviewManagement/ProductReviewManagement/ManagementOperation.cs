@@ -8,6 +8,7 @@ namespace ProductReviewManagement
 {
     class ManagementOperation
     {
+        DataTable dataTable = new DataTable();
         public static void Display(List<ProductReview> list)
         {
             foreach (ProductReview product in list)
@@ -40,5 +41,13 @@ namespace ProductReviewManagement
                 Console.WriteLine("ProductId : " + item.productId + " " + "Count:" + item.count);
             }
         }
+        public static void RetriveProductIdAndReviw(List<ProductReview> list)
+        {
+            var record = list.Select(product => new { ProductId = product.productId, Review = product.review }).ToList();
+            foreach (var item in record)
+            {
+                Console.WriteLine("ProductId : " + item.ProductId + " " + "Review:" + item.Review);
+            }
+        }       
     }
 }

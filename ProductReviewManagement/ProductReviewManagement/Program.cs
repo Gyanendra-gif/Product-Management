@@ -21,12 +21,17 @@ namespace ProductReviewManagement
                 new ProductReview(){productId=7, userId=7, rating=5, review="Good", isLike=true},
                 new ProductReview(){productId=8, userId=8, rating=5, review="Average", isLike=true},
                 new ProductReview(){productId=9, userId=9, rating=5, review="Good", isLike=true},
-                new ProductReview(){productId=10, userId=10, rating=5, review="Good", isLike=true}
+                new ProductReview(){productId=10, userId=10, rating=5, review="Good", isLike=true},
+                new ProductReview(){productId=11, userId=10, rating=5, review="Good", isLike=true},
+                new ProductReview(){productId=12, userId=10, rating=5, review="Bad", isLike=true},
+                new ProductReview(){productId=13, userId=10, rating=5, review="Poor", isLike=true},
+                new ProductReview(){productId=14, userId=10, rating=5, review="Good", isLike=true},
+                new ProductReview(){productId=15, userId=10, rating=5, review="Bad", isLike=true}
             };
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter your Choice Number to Execute the Program Press- 1-Display Data, 2-Retrive Data, 3-Display Data Based on Product Id, 4-Count Product Id, 5-Exit");
+                Console.WriteLine("Enter your Choice Number to Execute the Program Press- 1-Display Data, 2-Retrive Data, 3-Display Data Based on Product Id, 4-Count Product Id, 5-Retreive by ProductId, 6-Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -43,6 +48,9 @@ namespace ProductReviewManagement
                         ManagementOperation.CountingProductId(list);
                         break;
                     case 5:
+                        ManagementOperation.RetriveProductIdAndReviw(list);
+                        break;
+                    case 6:
                         flag = false;
                         break;
                 }
