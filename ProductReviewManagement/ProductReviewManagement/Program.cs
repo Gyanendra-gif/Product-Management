@@ -33,7 +33,7 @@ namespace ProductReviewManagement
             while (flag)
             {
                 Console.WriteLine("Enter your Choice Number to Execute the Program Press- 1-Display Data, 2-Retrive Data, 3-Display Data Based on Product Id, 4-Count Product Id, " +
-                    "5-Retreive by ProductId, 6-Skip Records, 7-Data Table, 8-Exit");
+                    "5-Retreive by ProductId, 6-Skip Records, 7-Data Table, 8-Review Records, 9-Average of Records, 10-Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -62,6 +62,9 @@ namespace ProductReviewManagement
                         operation.RetriveRecordsFromDataTable();
                         break;
                     case 9:
+                        operation.AveragePerProductId(list);
+                        break;
+                    case 10:
                         flag = false;
                         break;
                 }
