@@ -59,6 +59,9 @@ namespace ProductReviewManagement
                         operation.ProductReviewDataTable(list);
                         break;
                     case 8:
+                        operation.RetriveRecordsFromDataTable();
+                        break;
+                    case 9:
                         flag = false;
                         break;
                 }
