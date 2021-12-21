@@ -51,6 +51,9 @@ namespace ProductReviewManagement
                         ManagementOperation.RetriveProductIdAndReviw(list);
                         break;
                     case 6:
+                        ManagementOperation.SkipTopRatingsRecords(list);
+                        break;
+                    case 7:
                         flag = false;
                         break;
                 }
