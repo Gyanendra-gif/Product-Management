@@ -10,6 +10,7 @@ namespace ProductReviewManagement
         {
             Console.WriteLine("Welcome to Project Review Management Program");
             ProductReview product = new ProductReview();
+            ManagementOperation operation = new ManagementOperation();
             List<ProductReview> list = new List<ProductReview>()
             {
                 new ProductReview(){productId=1, userId=1, rating=5, review="Good", isLike=true},
@@ -31,7 +32,8 @@ namespace ProductReviewManagement
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter your Choice Number to Execute the Program Press- 1-Display Data, 2-Retrive Data, 3-Display Data Based on Product Id, 4-Count Product Id, 5-Retreive by ProductId, 6-Exit");
+                Console.WriteLine("Enter your Choice Number to Execute the Program Press- 1-Display Data, 2-Retrive Data, 3-Display Data Based on Product Id, 4-Count Product Id, " +
+                    "5-Retreive by ProductId, 6-Skip Records, 7-Data Table, 8-Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -54,6 +56,9 @@ namespace ProductReviewManagement
                         ManagementOperation.SkipTopRatingsRecords(list);
                         break;
                     case 7:
+                        operation.ProductReviewDataTable(list);
+                        break;
+                    case 8:
                         flag = false;
                         break;
                 }
